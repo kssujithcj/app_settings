@@ -99,6 +99,10 @@ class AppSettingsPlugin() : MethodCallHandler, FlutterPlugin, ActivityAware {
             openSettings(Settings.ACTION_LOCATION_SOURCE_SETTINGS, asAnotherTask)
         } else if (call.method == "security") {
             openSettings(Settings.ACTION_SECURITY_SETTINGS, asAnotherTask)
+        } else if(call.method == "fingerprint") {
+            openSettings(Settings.ACTION_FINGERPRINT_ENROLL, asAnotherTask)
+        } else if(call.method == "biometric") {
+            openSettings(Settings.ACTION_BIOMETRIC_ENROLL, asAnotherTask)
         } else if (call.method == "locksettings") {
             openSettings(DevicePolicyManager.ACTION_SET_NEW_PASSWORD, asAnotherTask)
         } else if (call.method == "bluetooth") {
