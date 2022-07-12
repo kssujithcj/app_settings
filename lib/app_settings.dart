@@ -42,6 +42,22 @@ class AppSettings {
     });
   }
 
+  static Future<void> openBiometricSettings({
+    bool asAnotherTask = false,
+  }) async {
+    _channel.invokeMethod('biometric', {
+      'asAnotherTask': asAnotherTask,
+    });
+  }
+
+  static Future<void> openFingerprintSettings({
+    bool asAnotherTask = false,
+  }) async {
+    _channel.invokeMethod('fingerprint', {
+      'asAnotherTask': asAnotherTask,
+    });
+  }
+
   /// Future async method call to open security settings.
   static Future<void> openLockAndPasswordSettings({
     bool asAnotherTask = false,
@@ -173,10 +189,9 @@ class AppSettings {
       {bool asAnotherTask = false}) async {
     _channel.invokeMethod('development', {'asAnotherTask': asAnotherTask});
   }
-  
+
   /// Opening hotspot and tethering settings
-  static Future<void> openHotspotSettings(
-      {bool asAnotherTask = false}) async {
+  static Future<void> openHotspotSettings({bool asAnotherTask = false}) async {
     _channel.invokeMethod('hotspot', {'asAnotherTask': asAnotherTask});
   }
 }
